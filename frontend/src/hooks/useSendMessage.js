@@ -23,7 +23,10 @@ const useSendMessage = () => {
       if (data.error) throw new Error(data.error);
 
       // Update messages state directly
-      setMessages({ messages: [...messages.messages, data.messages] });
+      setMessages({
+        messages: [...messages.messages, data.messages],
+        data: data.messages,
+      });
 
       console.log("Messages before data:", messages.messages);
       console.log("Data:", data);
